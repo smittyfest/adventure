@@ -1,2 +1,2 @@
 # adventure-time
-Rogue-like
+Rogue-like focusing on mystery and inter-dimensional travel
