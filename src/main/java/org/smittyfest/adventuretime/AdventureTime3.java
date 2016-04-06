@@ -4,7 +4,8 @@ import java.util.Random;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.layout.TilePane;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
@@ -38,15 +39,16 @@ public class AdventureTime3 extends Application {
   private static final Random random = new Random();
 
   public void start(Stage primaryStage) throws Exception {
-    TilePane board = new TilePane();
+    GridPane board = new GridPane();
     for (int colCoord = LEFTMOST_FRAME_BARRIER, col = 0; col < OVERWORLD_MAP_COLUMNS; ++col, colCoord += HORIZONTAL_MOVE_INCREMENT) {
       for (int rowCoord = TOP_OF_FRAME_BARRIER, row = 0; row < OVERWORLD_MAP_ROWS; ++row, rowCoord += VERTICAL_MOVE_INCREMENT) {
-        Text text = new Text("§");
-        text.setLayoutY(rowCoord);
-        text.setLayoutX(colCoord);
+        StackPane stackPane = new StackPane();
+        Tile tile = Tile.from("§", generateColor(), colCoord, rowCoord);
+        Text text = new Text(tile.getSymbol());
         text.setFill(generateColor());
         text.setFont(Font.font("Courier", FontWeight.BOLD, 16));
-       // board.add(text, colCoord, rowCoord);
+        stackPane.getChildren().addAll(tile, text);
+         board.add(stackPane, colCoord, rowCoord);
       }
     }
     Scene scene = new Scene(board, 1010, 384);
