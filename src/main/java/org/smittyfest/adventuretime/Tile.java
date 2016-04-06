@@ -8,8 +8,8 @@ import javafx.scene.shape.Rectangle;
  */
 public class Tile extends Rectangle {
 
-  private static final int TILE_WIDTH = 8;
-  private static final int TILE_HEIGHT = 12;
+  private static final int TILE_WIDTH = 10; // original: 8
+  private static final int TILE_HEIGHT = 16; // original: 12
   private final String symbol;
   private final Color color;
 
@@ -17,6 +17,7 @@ public class Tile extends Rectangle {
     super();
     this.symbol = symbol;
     this.color = color;
+    super.setFill(color);
     super.setWidth(TILE_WIDTH);
     super.setHeight(TILE_HEIGHT);
     super.setX(coordX);
