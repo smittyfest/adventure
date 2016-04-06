@@ -1,4 +1,4 @@
-package com.smittyfest.adventuretime;
+package org.smittyfest.adventuretime;
 
 import java.util.Random;
 
