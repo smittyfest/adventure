@@ -1,8 +1,7 @@
 package org.smittyfest.adventuretime;
 
 /**
- * @author Eric Smith
- * @since 4/23/16
+ * @author smittyfest
  */
 import java.util.Random;
 import javafx.animation.AnimationTimer;
